@@ -29,12 +29,7 @@ class Vehicule{
 	}
 	
 	public boolean meilleur(Vehicule autreVehicule) {
-		if (this.vitesseMax > autreVehicule.vitesseMax) {
-			return true;
-		}
-		else {
-			return false;
-		}	
+		return (this.vitesseMax > autreVehicule.vitesseMax) ? true : false;	
 	}
 	
 	public String getNom() {
@@ -96,23 +91,15 @@ class Moto extends Vehicule{
 	}
 	
 	public String toString() {
-		String str;
+		String str = "";
 		if (hasSideCar) {
 			 str = ", avec sidecar";
-		}
-		else {
-			str = "";
 		}
 		return nom + " ->  vitesse max = " + vitesseMax + " km/h, poids = " + poids + " kg, Moto" + str;
 	}
 	
 	public boolean estDeuxRoues() {
-		if (hasSideCar) {
-			return false;
-		}
-		else {
-			return true;
-		}
+		return (hasSideCar) ? false : true;
 	}
 }
 
@@ -133,32 +120,23 @@ class GrandPrix extends Rallye{
 	
 	
 	public boolean check() {
-		ArrayList<String> verification = new ArrayList<String>();
-		int i = 0;
-		int j = 1 ;
-		int k = 0 ;
-		boolean resultat = false;
-		while ( i < collection.size()) {
-			if (collection.get(i).estDeuxRoues()){
-				verification.add("moto");
-			}
-			else {
-				verification.add("autre");
-			}
-			i++;
+		if (collection.size() == 0)
+			return true;
+		if (collection.get(0).estDeuxRoues()) {
+			for (Vehicule vehicule : collection) {
+				if (!vehicule.estDeuxRoues()) {
+					return false;
+				}
+			}	
 		}
-		while ( j < verification.size()) {
-			if (verification.get(k) == verification.get(j) ) {
-				resultat = true;
-				j++;	
+		else {
+			for (Vehicule vehicule : collection) {
+				if (vehicule.estDeuxRoues()) {
+					return false;
+				}
 			}
-			else {
-				resultat = false;
-				j++;
-			}				
 		}
-		return resultat;
-		
+		return true;
 	}
 	
 	public void ajouter(Vehicule vehicule)  {
@@ -169,57 +147,44 @@ class GrandPrix extends Rallye{
 		if (vehicule != null) {
 			collection.add(vehicule);
 		}
-		else {
-			
-		}
 	}
 	
 	public void run(int tours) {
 		Vehicule vehiculeGagnant = new Vehicule();
 		ArrayList<Vehicule> ligneArrivée = new ArrayList<Vehicule>();
-		int l = 0;
+		int vehicule = 0;
 		if (!check()) {
 			System.out.println("Pas de Grand Prix");
 		}
 		else {
-			for (Vehicule vehicule : collection) {
-				vehicule.carburant -= tours;
-				if (vehicule.carburant > 0) {
-					ligneArrivée.add(vehicule);
+			for (Vehicule vehiculeAuDepart : collection) {
+				vehiculeAuDepart.carburant -= tours;
+				if (vehiculeAuDepart.carburant > 0) {
+					ligneArrivée.add(vehiculeAuDepart);
 				}
 			}
 			
 			if (ligneArrivée.size() == 0) {
 				System.out.println("Elimination de tous les véhicules");
+				return;
 			}
-			
-			if (ligneArrivée.size() != 0) {
 				
-			while (l <= ligneArrivée.size()) {
-				if (ligneArrivée.get(l).meilleur(ligneArrivée.get(l+1))) {
-					vehiculeGagnant = ligneArrivée.get(l);
-					l++;
-					if (l == ligneArrivée.size() - 1) {
-						break;
-					}
+			while (vehicule < ligneArrivée.size() - 1) {
+				if (ligneArrivée.get(vehicule).meilleur(ligneArrivée.get(vehicule+1))) {
+					vehiculeGagnant = ligneArrivée.get(vehicule);
+					
 				}
 				else {
-					vehiculeGagnant = ligneArrivée.get(l+1);
-					l++;
-					if (l == ligneArrivée.size() - 1) {
-						break;
-					}
+					vehiculeGagnant = ligneArrivée.get(vehicule+1);
+					
 				}
+				vehicule++;
 			}
 			System.out.println("Le gagant du grand prix est :");
 			System.out.println(vehiculeGagnant.toString());
 			}
-			else {
-				
-			}
 		}
 	}
-}
 
 
 
