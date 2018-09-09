@@ -172,11 +172,9 @@ class GrandPrix extends Rallye{
 			while (vehicule < ligneArrivée.size() - 1) {
 				if (ligneArrivée.get(vehicule).meilleur(ligneArrivée.get(vehicule+1))) {
 					vehiculeGagnant = ligneArrivée.get(vehicule);
-					
 				}
 				else {
 					vehiculeGagnant = ligneArrivée.get(vehicule+1);
-					
 				}
 				vehicule++;
 			}
@@ -185,11 +183,6 @@ class GrandPrix extends Rallye{
 			}
 		}
 	}
-
-
-
-
-
 
 /*******************************************
  * Ne pas modifier apres cette ligne
