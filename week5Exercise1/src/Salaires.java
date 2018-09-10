@@ -2,10 +2,10 @@ import java.util.ArrayList;
 
 abstract class Employe{
 	
-	String nom;
-	String prenom;
-	int age;
-	String dateEntree;
+	protected String nom;
+	protected String prenom;
+	protected int age;
+	protected String dateEntree;
 	
 	abstract double calculerSalaire();
 	
@@ -18,9 +18,7 @@ abstract class Employe{
 		this.dateEntree = dateEntree;
 	}
 	
-	Employe(){
-		
-	}
+	
 	
 }
 
@@ -77,9 +75,7 @@ class Technicien extends Employe{
 		this.units = units;
 	}
 	
-	Technicien(){
-		
-	}
+	
 }
 
 
@@ -100,18 +96,13 @@ class Manutentionnaire extends Employe{
 		this.hours = hours;
 	}
 	
-	Manutentionnaire(){
-		
-	}
 	
 	
 }
 
 class ManutARisque extends Manutentionnaire implements employeARisque{
 	
-	ManutARisque(){
-		
-	}
+	
 	
 	ManutARisque(String nom, String prenom,int age, String dateEntree, int hours){
 		super( nom, prenom,age, dateEntree, hours);
@@ -124,9 +115,7 @@ class ManutARisque extends Manutentionnaire implements employeARisque{
 
 class TechnARisque extends Technicien implements employeARisque{
 	
-	TechnARisque(){
-		
-	}
+	
 	
 	TechnARisque(String nom, String prenom,int age, String dateEntree, int hours){
 		super( nom, prenom,age, dateEntree, hours);
