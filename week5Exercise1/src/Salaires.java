@@ -24,10 +24,12 @@ abstract class Employe{
 
 class Vendeur extends Employe{
 	
-	int CA; 
+	private static int CA;
+	static double partVariable = 0.2*CA;
+	static double partFixe = 400;
 	
 	public double calculerSalaire() {
-		return 0.2*CA + 400;
+		return partVariable + partFixe;
 	}
 	
 	public String getNom() {
@@ -162,9 +164,6 @@ class Personnel{
 	}
 	
 }
-
-
-
 
 public class Salaires {
 
