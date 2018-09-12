@@ -34,9 +34,11 @@ If this is the case, the program stops and announce who won.
 Below you can find some screenshots of what the display of the game is like.
 
 At the beginning the program asks for a name that has to be written is the console.
+Then the AI plays first.
+
 ![alt text](screenShots/start.png " ")
 
-Then the AI plays first.
+
 
 If someone gets 4 colours aligned, he wins.
 
@@ -45,7 +47,11 @@ If someone gets 4 colours aligned, he wins.
 The computer can also win obviously... and even in diagonal :
 
 ![alt text](screenShots/otherend.png " ")
+
+
 ## Class diagram
+
+Below you can find the class diagram associated with this program.
 
 ![alt text](puissance4_model.jpg " ")
 
