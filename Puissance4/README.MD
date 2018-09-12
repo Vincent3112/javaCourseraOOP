@@ -31,13 +31,20 @@ If this is the case, the program stops and announce who won.
 
 ## Screenshots
 
-Below you can find some screenshots of what the code is about.
+Below you can find some screenshots of what the display of the game is like.
 
 At the beginning the program asks for a name that has to be written is the console.
 ![alt text](screenShots/start.png " ")
 
 Then the AI plays first.
 
+If someone gets 4 colours aligned, he wins.
+
+![alt text](screenShots/end.png " ")
+
+The computer can also win obviously... and even in diagonal :
+
+![alt text](screenShots/otherend.png " ")
 ## Class diagram
 
 ![alt text](puissance4_model.jpg " ")
