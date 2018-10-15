@@ -151,7 +151,7 @@ class GrandPrix extends Rallye{
 	
 	public void run(int tours) {
 		Vehicule vehiculeGagnant = new Vehicule();
-		ArrayList<Vehicule> ligneArrivée = new ArrayList<Vehicule>();
+		ArrayList<Vehicule> ligneArrivÃ©e = new ArrayList<Vehicule>();
 		int vehicule = 0;
 		if (!check()) {
 			System.out.println("Pas de Grand Prix");
@@ -160,21 +160,21 @@ class GrandPrix extends Rallye{
 			for (Vehicule vehiculeAuDepart : collection) {
 				vehiculeAuDepart.carburant -= tours;
 				if (vehiculeAuDepart.carburant > 0) {
-					ligneArrivée.add(vehiculeAuDepart);
+					ligneArrivÃ©e.add(vehiculeAuDepart);
 				}
 			}
 			
-			if (ligneArrivée.size() == 0) {
-				System.out.println("Elimination de tous les véhicules");
+			if (ligneArrivÃ©e.size() == 0) {
+				System.out.println("Elimination de tous les vÃ©hicules");
 				return;
 			}
 				
-			while (vehicule < ligneArrivée.size() - 1) {
-				if (ligneArrivée.get(vehicule).meilleur(ligneArrivée.get(vehicule+1))) {
-					vehiculeGagnant = ligneArrivée.get(vehicule);
+			while (vehicule < ligneArrivÃ©e.size() - 1) {
+				if (ligneArrivÃ©e.get(vehicule).meilleur(ligneArrivÃ©e.get(vehicule+1))) {
+					vehiculeGagnant = ligneArrivÃ©e.get(vehicule);
 				}
 				else {
-					vehiculeGagnant = ligneArrivée.get(vehicule+1);
+					vehiculeGagnant = ligneArrivÃ©e.get(vehicule+1);
 				}
 				vehicule++;
 			}
