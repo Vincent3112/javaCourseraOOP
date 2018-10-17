@@ -5,8 +5,6 @@ public abstract class Courrier {
 	boolean isExpress;
 	String adresse;
 	boolean isNotValid;
-
-	
 	
 	Courrier(int poids, boolean isExpress, String adresse) {
 		this.poids = poids;
@@ -15,8 +13,7 @@ public abstract class Courrier {
 		boolean isNotValid = false;
 		if (adresse == "") {
 			isNotValid = true;
-		}
-			
+		}		
 	}
 	
 	public String isExpress() {
@@ -30,8 +27,6 @@ public abstract class Courrier {
 	public abstract double affranchirCourrier();
 	
 
-public void afficher() {
-	
-}
-
+	public void afficher() {
+		}
 }

@@ -12,13 +12,13 @@ public class JoueurHumain extends Joueurs {
 		do {
 			System.out.println("Entre la colonne dans laquelle vous souhaitez jouer : ");
 			Scanner scanner = new Scanner(System.in);
-			int colonneJouÃ©e = scanner.nextInt();
-			coupValide = jeu.joueCoup(colonneJouÃ©e, this.getCouleur());
+			int colonneJouée = scanner.nextInt();
+			coupValide = jeu.joueCoup(colonneJouée, this.getCouleur());
 			if (coupValide == false) {
 				System.out.println("Veuillez saisir une autre colonne");
 			}
 			else {
-				System.out.println("Le joueur " + this.nom + " a jouï¿½ en " + (colonneJouÃ©e + 1));
+				System.out.println("Le joueur " + this.nom + " a joué en " + (colonneJouée + 1));
 			}
 		}
 		while (coupValide == false);

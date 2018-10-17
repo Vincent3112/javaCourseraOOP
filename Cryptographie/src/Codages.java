@@ -18,6 +18,4 @@ public class Codages {
 			System.out.println();
 		}
 	}
-	
-	
 }

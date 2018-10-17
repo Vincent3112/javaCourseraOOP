@@ -1,4 +1,3 @@
-
 public class Publicite extends Courrier {
 
 	double prix;
@@ -36,7 +35,6 @@ public class Publicite extends Courrier {
 		if (isExpress) {
 			montant = montant*2;
 		}
-		
 		return montant/1000;
 	}
 }

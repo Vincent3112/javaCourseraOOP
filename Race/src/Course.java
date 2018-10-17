@@ -3,7 +3,6 @@ import java.util.ArrayList;
 /*******************************************
  * Completez le programme a partir d'ici.
  *******************************************/
-
 class Vehicule{
 	String nom;
 	double vitesseMax;
@@ -53,8 +52,6 @@ class Vehicule{
 	}
 }
 
-
-
 class Voiture extends Vehicule{
 	
 	String categorie;
@@ -103,7 +100,6 @@ class Moto extends Vehicule{
 	}
 }
 
-
 abstract class Rallye{
 	
 	public abstract boolean check();
@@ -117,7 +113,6 @@ class GrandPrix extends Rallye{
 	GrandPrix(){
 		collection = new ArrayList<Vehicule>();
 	}
-	
 	
 	public boolean check() {
 		if (collection.size() == 0)
@@ -151,7 +146,7 @@ class GrandPrix extends Rallye{
 	
 	public void run(int tours) {
 		Vehicule vehiculeGagnant = new Vehicule();
-		ArrayList<Vehicule> ligneArriv√©e = new ArrayList<Vehicule>();
+		ArrayList<Vehicule> ligneArrivÈe = new ArrayList<Vehicule>();
 		int vehicule = 0;
 		if (!check()) {
 			System.out.println("Pas de Grand Prix");
@@ -160,21 +155,21 @@ class GrandPrix extends Rallye{
 			for (Vehicule vehiculeAuDepart : collection) {
 				vehiculeAuDepart.carburant -= tours;
 				if (vehiculeAuDepart.carburant > 0) {
-					ligneArriv√©e.add(vehiculeAuDepart);
+					ligneArrivÈe.add(vehiculeAuDepart);
 				}
 			}
 			
-			if (ligneArriv√©e.size() == 0) {
+			if (ligneArrivÈe.size() == 0) {
 				System.out.println("Elimination de tous les v√©hicules");
 				return;
 			}
 				
-			while (vehicule < ligneArriv√©e.size() - 1) {
-				if (ligneArriv√©e.get(vehicule).meilleur(ligneArriv√©e.get(vehicule+1))) {
-					vehiculeGagnant = ligneArriv√©e.get(vehicule);
+			while (vehicule < ligneArrivÈe.size() - 1) {
+				if (ligneArrivÈe.get(vehicule).meilleur(ligneArrivÈe.get(vehicule+1))) {
+					vehiculeGagnant = ligneArrivÈe.get(vehicule);
 				}
 				else {
-					vehiculeGagnant = ligneArriv√©e.get(vehicule+1);
+					vehiculeGagnant = ligneArrivÈe.get(vehicule+1);
 				}
 				vehicule++;
 			}

@@ -1,18 +1,14 @@
-
 public class Colis extends Courrier{
 
-	
 	double volume;
 	double prix;
 	
 	Colis(int poids, boolean isExpress, String adresse, int volume) {
 		super(poids, isExpress, adresse);
 		this.volume = volume;
-		
 		if (adresse == "") {
 			isNotValid = true;
 		}
-		
 		if (volume > 50) {
 			isNotValid = true;
 		}
@@ -44,8 +40,6 @@ public class Colis extends Courrier{
 		if (isExpress) {
 			montant = montant*2;
 		}
-		
 		return montant/1000;
 	}
-	
 }

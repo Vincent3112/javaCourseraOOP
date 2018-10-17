@@ -1,4 +1,3 @@
-
 public class Secret {
 
 	public static void main(String [] args) {
@@ -11,13 +10,7 @@ public class Secret {
 				new ACle("a cle", "EQUINOXE"), 
 				new ACleAleatoire(5),
 				new ACleAleatoire(10)};
-		
 		Codages codes = new Codages(tab);
-		codes.test(message);
-		
-		
-		
-		
-		
+		codes.test(message);	
 	}
 }

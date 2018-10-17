@@ -8,15 +8,11 @@ private ArrayList<Courrier> listeCourrier;
 		listeCourrier = new ArrayList<Courrier>();
 	}
 	
-	public void ajouterCourrier(Courrier courrier)
-	{
-	if (courrier != null)
-	{
-	listeCourrier.add(courrier);
+	public void ajouterCourrier(Courrier courrier) {
+		if (courrier != null) {
+			listeCourrier.add(courrier);
+		}
 	}
-	}
-	
-	
 	
 	public double affranchir() {
 		double montantTotal = 0;

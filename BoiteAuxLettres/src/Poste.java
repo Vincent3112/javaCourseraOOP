@@ -1,4 +1,3 @@
-
 // PROGRAMME PRINCIPAL (A NE PAS MODIFIER)
 class Poste {
 
@@ -26,8 +25,7 @@ class Poste {
 		boite.ajouterCourrier(pub2);
 		boite.ajouterCourrier(colis1);
 		boite.ajouterCourrier(colis2);
-
-
+		
 		System.out.println("Le montant total d'affranchissement est de " +
 						   boite.affranchir());
 		boite.afficher();

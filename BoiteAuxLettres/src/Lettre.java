@@ -1,6 +1,4 @@
-
 public class Lettre extends Courrier{
-
 	
 	String format;
 	double prix = 0;
@@ -8,7 +6,6 @@ public class Lettre extends Courrier{
 	Lettre(int poids, boolean isExpress, String adresse, String format) {
 		super(poids, isExpress, adresse);
 		this.format = format;
-		
 		if (adresse == "") {
 			isNotValid = true;
 		}
@@ -22,7 +19,6 @@ public class Lettre extends Courrier{
 			return affranchirCourrier();
 		}
 	}
-	
 	
 	public void afficher() {
 		System.out.println("Lettre");
@@ -47,9 +43,6 @@ public class Lettre extends Courrier{
 		if (isExpress) {
 			prix = prix*2;
 		}
-		
 		return prix/1000;
 	}
-	
-	
 }

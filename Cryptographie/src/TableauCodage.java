@@ -4,7 +4,6 @@ public class TableauCodage {
 
 	public ArrayList<Integer> cleCodage;
 	
-	
 	TableauCodage(int nbrCharacteres) {
 		cleCodage = new ArrayList<Integer>();
 	}
@@ -16,8 +15,6 @@ public class TableauCodage {
 		}
 	}
 	
-	
-	
 	public int get(int unInt) {
 		return cleCodage.get(unInt);
 	}
@@ -26,9 +23,5 @@ public class TableauCodage {
 		for (int i = 0; i < cleCodage.size(); i++) {
 			System.out.print(cleCodage.get(i) + ", ");
 		}
-	}
-
-	
-
-	
+	}	
 }

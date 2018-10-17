@@ -8,7 +8,6 @@ public class ACle extends Code{
 	ArrayList<Integer> translationTable3 = new ArrayList<Integer>();
 	ArrayList<Integer> translationTable4 = new ArrayList<Integer>();
 	
-	
 	ACle(String nom, String clé){
 		super(nom);
 		this.clé = clé;
@@ -24,52 +23,52 @@ public class ACle extends Code{
 	
 	public String code(String s) {
 		
-		char[] charArray = s.toCharArray();
-		for (char c : charArray) {
+		char[] charArrayString = s.toCharArray();
+		for (char c : charArrayString) {
 			int ascii = c;
 			ascii-=64;
 			translationTable1.add(ascii);
 		}
-		//System.out.println(translationTable1);
-		char[] charArray2 = clé.toCharArray();
-		for (char c : charArray2) {
+		
+		char[] charArrayKey = clé.toCharArray();
+		for (char c : charArrayKey) {
 			int ascii = c;
 			ascii-=64;
 			translationTable2.add(ascii);
 		}
-		//System.out.println(translationTable2);
-		TableauCodage cleCodage = new TableauCodage(translationTable1.size());
+		
+		TableauCodage keyMatchStringSize = new TableauCodage(translationTable1.size());
 		int i = 0;
 		int j = 0;
 		while (j < translationTable1.size()) {
-			cleCodage.add(translationTable2.get(i));
+			keyMatchStringSize.add(translationTable2.get(i));
 			i++;
 			j++;
 			if (i == translationTable2.size()) {
 				i = 0;
 			}
 		}
-		//cleCodage.getTableau();
+		
 		TableauCodage additionCodes = new TableauCodage(translationTable1.size());
 		int k =0;
 		while (k < translationTable1.size()) {
-			int a = translationTable1.get(k) + cleCodage.get(k);
+			int a = translationTable1.get(k) + keyMatchStringSize.get(k);
 			if (a > 26) {
 				a-=26;
 			}
 			additionCodes.add(a);
 			k++;
 		}
-		//additionCodes.getTableau();
-		ArrayList<String> codedecode = new ArrayList<String>();
+		
+		ArrayList<String> codedString = new ArrayList<String>();
 		int l =0;
 		char[] alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
 		while ( l < translationTable1.size()) {
-			codedecode.add(Character.toString(alphabet[additionCodes.get(l) - 1]));
+			codedString.add(Character.toString(alphabet[additionCodes.get(l) - 1]));
 			l++;
 		}
-		String leCodeEstDecode = String.join("",  codedecode);
-		return leCodeEstDecode;
+		String stringIsCoded = String.join("",  codedString);
+		return stringIsCoded;
 	}
 	
 	

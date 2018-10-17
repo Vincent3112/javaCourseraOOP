@@ -4,7 +4,6 @@ public class Cesar extends ACle {
 
 	int crans; 
 	
-	
 	Cesar(String nom, int crans) {
 		this.crans = crans;
 		this.nom = nom;
@@ -15,16 +14,11 @@ public class Cesar extends ACle {
 		System.out.println(nom + " à " + crans + " crans");
 	}
 	
-	
 	public void genereCle() {
 		
 		String cleGenere;
 		char[] alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();		
 			cleGenere = Character.toString(alphabet[crans - 1]);
 			clé = cleGenere;
-		
-		
 	}
-		
-	
 }
