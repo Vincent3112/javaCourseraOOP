@@ -71,8 +71,6 @@ public class ACle extends Code{
 		return stringIsCoded;
 	}
 	
-	
-	
 	public String decode(String s) {
 		char[] charArray3 = s.toCharArray();
 		for (char c : charArray3) {
@@ -80,7 +78,6 @@ public class ACle extends Code{
 			ascii-=64;
 			translationTable3.add(ascii);
 		}
-		//System.out.println(translationTable3);
 		char[] charArray4 = clé.toCharArray();
 		for (char c : charArray4) {
 			int ascii = c;
